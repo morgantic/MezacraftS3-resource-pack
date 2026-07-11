@@ -18,7 +18,7 @@ jobs:
         id: get-next-version
         uses: cycjimmy/semantic-release-action@v6.0.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           dry_run: true
           extra_plugins: |
@@ -41,7 +41,7 @@ jobs:
         id: release
         uses: cycjimmy/semantic-release-action@v6.0.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           extra_plugins: |
             conventional-changelog-conventionalcommits 
